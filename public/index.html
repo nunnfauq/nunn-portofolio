@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nunn — RPL Student &amp; Aspiring Software Developer</title>
+  <meta name="description" content="Portfolio pribadi Nunn, siswa SMK jurusan Rekayasa Perangkat Lunak (RPL). Berfokus pada software development, web development, database, dan eksplorasi teknologi digital.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tech: {
+              dark: "#090a10",
+              card: "#0c0f18",
+              border: "#1e2538",
+              blue: "#3b82f6",
+              electric: "#2563eb",
+              sky: "#38bdf8",
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --background: #090a10;
+      --foreground: #f1f5f9;
+    }
+    body {
+      background-color: #090a10;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090a10;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e2538;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2a344f;
+    }
+    ::selection {
+      background-color: #2563eb;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-[#090a10] text-slate-100 min-h-screen bg-grid-pattern selection:bg-blue-600 selection:text-white">
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#090a10]/70 backdrop-blur-md border-b border-slate-800/80 py-4">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="group flex items-center gap-2 text-white font-semibold text-lg tracking-tight focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">
+        <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6] group-hover:scale-125 transition-transform"></span>
+        <span class="font-mono text-slate-200 group-hover:text-blue-400 transition-colors">
+          nunn<span class="text-blue-500">.</span>dev
+        </span>
+        <span class="text-[11px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+          RPL
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 border border-slate-800/80 rounded-full px-4 py-1.5 backdrop-blur-md">
+        <a href="#home" class="px-3.5 py-1.5 text-sm text-slate-400 hover:text-white rounded-full hover:bg-white/5 transition-colors font-medium">Home</a>
+        <a href="#about" class="px-3.5 py-1.5 text-sm text-slate-400 hover:text-white rounded-full hover:bg-white/5 transition-colors font-medium">About</a>
+        <a href="#skills" class="px-3.5 py-1.5 text-sm text-slate-400 hover:text-white rounded-full hover:bg-white/5 transition-colors font-medium">Skills</a>
+        <a href="#projects" class="px-3.5 py-1.5 text-sm text-slate-400 hover:text-white rounded-full hover:bg-white/5 transition-colors font-medium">Projects</a>
+        <a href="#journey" class="px-3.5 py-1.5 text-sm text-slate-400 hover:text-white rounded-full hover:bg-white/5 transition-colors font-medium">Journey</a>
+        <a href="#contact" class="px-3.5 py-1.5 text-sm text-slate-400 hover:text-white rounded-full hover:bg-white/5 transition-colors font-medium">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#contact" class="group inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 rounded-lg transition-all shadow-sm shadow-blue-500/20 hover:shadow-blue-500/40">
+          <span>Let's Talk</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition-colors">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-[#0c0e17]/95 backdrop-blur-xl px-5 pt-4 pb-6 space-y-3">
+      <div class="flex flex-col space-y-1">
+        <a href="#home" class="mobile-nav-link px-4 py-2.5 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg text-sm font-medium">Home</a>
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg text-sm font-medium">About</a>
+        <a href="#skills" class="mobile-nav-link px-4 py-2.5 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg text-sm font-medium">Skills</a>
+        <a href="#projects" class="mobile-nav-link px-4 py-2.5 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg text-sm font-medium">Projects</a>
+        <a href="#journey" class="mobile-nav-link px-4 py-2.5 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg text-sm font-medium">Journey</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg text-sm font-medium">Contact</a>
+      </div>
+      <div class="pt-2 border-t border-slate-800/80">
+        <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors">
+          <span>Contact Me</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[90vh] flex items-center pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+      <!-- Glow background -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-blue-600/10 blur-[130px] pointer-events-none rounded-full"></div>
+      <div class="absolute top-1/3 -left-32 w-72 h-72 bg-sky-500/5 blur-[120px] pointer-events-none rounded-full"></div>
+
+      <div class="max-w-6xl mx-auto px-5 sm:px-6 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column -->
+          <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 shadow-sm backdrop-blur-md">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span class="font-mono text-slate-300">Currently learning &amp; building</span>
+            </div>
+
+            <!-- Main Headline -->
+            <div class="space-y-2">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08]">
+                BUILDING IDEAS.<br>
+                <span class="bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
+                  LEARNING EVERY DAY.
+                </span>
+              </h1>
+              <p class="text-sm sm:text-base font-mono text-blue-400/90 tracking-wide pt-1 flex items-center gap-2">
+                <span class="text-slate-600">—</span>
+                <span class="italic">&ldquo;nothing is impossible&rdquo;</span>
+              </p>
+            </div>
+
+            <!-- Short Bio -->
+            <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl font-normal">
+              Saya adalah siswa RPL yang sedang belajar software development, web development, database, dan berbagai teknologi digital melalui project sekolah maupun project pribadi.
+            </p>
+
+            <!-- Student Badges -->
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/70 border border-slate-800 text-xs font-mono text-slate-300">
+                <svg class="w-3.5 h-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                SMK RPL
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/70 border border-slate-800 text-xs font-mono text-slate-300">
+                <svg class="w-3.5 h-3.5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                Web &amp; Software Dev
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900/70 border border-slate-800 text-xs font-mono text-slate-300">
+                <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                Hands-on Projects
+              </span>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-3 w-full sm:w-auto">
+              <a href="#projects" class="group inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold text-sm transition-all shadow-md shadow-blue-600/20 hover:shadow-blue-600/30">
+                <span>View Projects</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+
+              <a href="#contact" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 text-slate-200 font-medium text-sm transition-all">
+                <span>Contact Me</span>
+              </a>
+
+              <a href="https://github.com/nunn" target="_blank" rel="noreferrer" aria-label="GitHub Profile" class="inline-flex items-center justify-center p-3 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white transition-all" title="Visit GitHub Profile">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Terminal Card -->
+          <div class="lg:col-span-5">
+            <div class="relative group">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600/30 to-sky-500/20 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500 pointer-events-none"></div>
+
+              <div class="relative rounded-xl bg-[#0d1017] border border-slate-800 shadow-2xl overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 bg-[#0a0c12] border-b border-slate-800/80">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-[#ff5f56]/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e]/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#27c93f]/80 inline-block"></span>
+                  </div>
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] text-slate-400">
+                    <svg class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                    <span>student_profile.ts</span>
+                  </div>
+                  <div class="w-8"></div>
+                </div>
+
+                <div class="p-5 font-mono text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto space-y-2">
+                  <p class="text-slate-500">// SMK RPL Student Specification</p>
+                  <p><span class="text-blue-400">const</span> <span class="text-sky-300">developer</span>: <span class="text-emerald-400">StudentProfile</span> = {</p>
+                  <div class="pl-4 space-y-1">
+                    <p><span class="text-slate-400">name:</span> <span class="text-amber-300">&quot;Nunn&quot;</span>,</p>
+                    <p><span class="text-slate-400">role:</span> <span class="text-amber-300">&quot;RPL Student &amp; Aspiring Dev&quot;</span>,</p>
+                    <p><span class="text-slate-400">tagline:</span> <span class="text-amber-300">&quot;nothing is impossible&quot;</span>,</p>
+                    <p><span class="text-slate-400">stack:</span> [<span class="text-sky-300">&quot;Web&quot;</span>, <span class="text-sky-300">&quot;PHP&quot;</span>, <span class="text-sky-300">&quot;MySQL&quot;</span>, <span class="text-sky-300">&quot;JS/React&quot;</span>],</p>
+                    <p><span class="text-slate-400">currentStatus:</span> <span class="text-emerald-400">&quot;Building &amp; Exploring&quot;</span>,</p>
+                    <p><span class="text-slate-400">openToLearn:</span> <span class="text-blue-400">true</span></p>
+                  </div>
+                  <p>};</p>
+
+                  <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
+                    <span class="flex items-center gap-1.5 text-emerald-400">
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                      Ready to build
+                    </span>
+                    <span class="font-mono">TypeScript v5.x</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 md:py-28 relative">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="flex flex-col items-start mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-3">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>ABOUT ME</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Mengenal Saya &amp; Cara Belajar
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400 mt-2 max-w-xl">
+            Siswa SMK RPL yang antusias membedah cara kerja sistem, logika web, dan database.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7 space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p class="text-slate-400">
+              Halo! Saya Nunn, seorang siswa SMK jurusan Rekayasa Perangkat Lunak (RPL) dengan ketertarikan mendalam pada dunia pemrograman, logika aplikasi, dan pengembangan web modern.
+            </p>
+            <p class="text-slate-400">
+              Bagi saya, coding adalah wadah untuk merealisasikan ide menjadi solusi nyata. Setiap baris kode yang ditulis merupakan proses eksperimen, memecahkan error, dan menyempurnakan alur sistem.
+            </p>
+            <p class="text-slate-400">
+              Fokus saya saat ini adalah memperkuat fondasi logika pemrograman, arsitektur database relasional, serta eksplorasi ekosistem web modern untuk membangun aplikasi yang fungsional, bersih, dan bermanfaat.
+            </p>
+
+            <!-- Philosophy Box -->
+            <div class="mt-6 p-5 sm:p-6 rounded-xl bg-[#0e121c] border border-blue-500/20 shadow-sm relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none"></div>
+              <div class="flex items-center gap-2 text-xs font-mono text-blue-400 mb-3">
+                <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                <span class="uppercase tracking-wider">Filosofi Belajar</span>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 my-3">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs sm:text-sm font-mono font-semibold text-white">Learn</span>
+                <span class="text-blue-500 font-bold text-xs">→</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs sm:text-sm font-mono font-semibold text-white">Build</span>
+                <span class="text-blue-500 font-bold text-xs">→</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs sm:text-sm font-mono font-semibold text-white">Break</span>
+                <span class="text-blue-500 font-bold text-xs">→</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs sm:text-sm font-mono font-semibold text-white">Fix</span>
+                <span class="text-blue-500 font-bold text-xs">→</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs sm:text-sm font-mono font-semibold text-white">Improve</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 mt-3 italic leading-normal">
+                &ldquo;Proses belajar sejati lahir saat kita berani mencoba, menghadapi error, membedah solusinya, dan menghasilkan karya yang lebih baik dari kemarin.&rdquo;
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Highlights -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 space-y-5">
+              <h3 class="text-base font-semibold text-white flex items-center gap-2">
+                <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                <span>Student Highlights</span>
+              </h3>
+
+              <div class="grid grid-cols-2 gap-3.5">
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80 flex flex-col justify-center">
+                  <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wide">Status</span>
+                  <span class="text-sm font-semibold text-slate-200 mt-1">Siswa SMK RPL</span>
+                </div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80 flex flex-col justify-center">
+                  <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wide">Fokus Belajar</span>
+                  <span class="text-sm font-semibold text-slate-200 mt-1">Web Dev &amp; Database</span>
+                </div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80 flex flex-col justify-center">
+                  <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wide">Prinsip</span>
+                  <span class="text-sm font-semibold text-slate-200 mt-1">Clean &amp; Authentic</span>
+                </div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80 flex flex-col justify-center">
+                  <span class="text-[11px] font-mono text-slate-500 uppercase tracking-wide">Motivasi</span>
+                  <span class="text-sm font-semibold text-slate-200 mt-1">Curiosity-Driven</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800 text-xs text-slate-400 space-y-2">
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span>Mempelajari kurikulum resmi RPL: Algoritma, PBO (Java), Pemrograman Web &amp; Basis Data.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span>Membangun portfolio berbasis project nyata, bukan sekadar teori di kelas.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 md:py-28 bg-[#090b12]/50 relative">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="flex flex-col items-start mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-3">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>TECHNICAL SKILLS</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Teknologi &amp; Tools yang Dipelajari
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400 mt-2 max-w-xl">
+            Berfokus pada pemahaman fundamental logika, basis data, dan ekosistem web development.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Languages -->
+          <div class="p-5 rounded-xl bg-[#0c0f18] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2 font-semibold text-white text-base">
+                <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                <span>Languages</span>
+              </div>
+              <p class="text-xs text-slate-400 mb-5 leading-normal">
+                Bahasa pemrograman yang dipelajari di kurikulum RPL dan eksplorasi mandiri.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>HTML</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>CSS</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>JavaScript</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Java</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>PHP</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>5 Technologies</span>
+              <span class="text-blue-400/80">Active</span>
+            </div>
+          </div>
+
+          <!-- Framework / Library -->
+          <div class="p-5 rounded-xl bg-[#0c0f18] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2 font-semibold text-white text-base">
+                <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span>Framework / Library</span>
+              </div>
+              <p class="text-xs text-slate-400 mb-5 leading-normal">
+                Teknologi modern untuk mempercepat pembuatan antarmuka dan logika web.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>React</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Next.js</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Node.js</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Tailwind CSS</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Bootstrap</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>5 Technologies</span>
+              <span class="text-blue-400/80">Active</span>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="p-5 rounded-xl bg-[#0c0f18] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2 font-semibold text-white text-base">
+                <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                <span>Database</span>
+              </div>
+              <p class="text-xs text-slate-400 mb-5 leading-normal">
+                Penyimpanan dan perancangan data relasional untuk aplikasi terstruktur.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>MySQL</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>Relational DB</span>
+              <span class="text-blue-400/80">Active</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="p-5 rounded-xl bg-[#0c0f18] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-2 font-semibold text-white text-base">
+                <svg class="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                <span>Tools &amp; Workflow</span>
+              </div>
+              <p class="text-xs text-slate-400 mb-5 leading-normal">
+                Perangkat kerja sehari-hari untuk coding, version control, dan desain UI.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Git</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>GitHub</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>VS Code</span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800/90 text-xs font-medium text-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>Figma</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+              <span>4 Developer Tools</span>
+              <span class="text-blue-400/80">Active</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Currently Learning Highlight -->
+        <div class="mt-10 p-6 sm:p-7 rounded-xl bg-gradient-to-r from-blue-950/20 via-[#0d101a] to-slate-900/60 border border-blue-500/20 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div class="inline-flex items-center gap-2 text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">
+                <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                <span>Currently Learning</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Fokus Pendalaman Saat Ini
+              </h3>
+            </div>
+            <span class="self-start sm:self-auto text-xs font-mono px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              Q1-Q2 2026 Target
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-lg bg-slate-950/80 border border-slate-800/90 flex flex-col justify-between space-y-2 hover:border-blue-500/30 transition-colors">
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <h4 class="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">Next.js App Router &amp; Server Components</h4>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed pl-6">Mempelajari rendering modern, optimasi routing, dan clean folder structure.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-950/80 border border-slate-800/90 flex flex-col justify-between space-y-2 hover:border-blue-500/30 transition-colors">
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <h4 class="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">TypeScript Integration</h4>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed pl-6">Menerapkan static typing agar kode lebih aman dari runtime bug dan mudah di-maintain.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-950/80 border border-slate-800/90 flex flex-col justify-between space-y-2 hover:border-blue-500/30 transition-colors">
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <h4 class="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">REST API &amp; Backend Architecture</h4>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed pl-6">Menghubungkan frontend modern dengan endpoint data terstruktur dan validasi payload.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-slate-950/80 border border-slate-800/90 flex flex-col justify-between space-y-2 hover:border-blue-500/30 transition-colors">
+              <div class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <h4 class="text-xs sm:text-sm font-semibold text-slate-200 leading-snug">Database Normalization &amp; Queries</h4>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed pl-6">Mendalami relasi tabel di MySQL, indexing, dan transaksi data yang efisien.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 md:py-28 relative">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="flex flex-col items-start mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-3">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+            <span>FEATURED PROJECTS</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Project Unggulan &amp; Eksperimen
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400 mt-2 max-w-xl">
+            Aplikasi nyata yang dibangun dari materi RPL di sekolah serta eksplorasi pemrograman mandiri.
+          </p>
+        </div>
+
+        <!-- Spotlight Project -->
+        <div class="mb-12 relative group">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600/30 via-indigo-500/20 to-sky-500/30 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition duration-500 pointer-events-none"></div>
+          <div class="relative rounded-2xl bg-[#0c0f18] border border-blue-500/30 p-6 sm:p-8 lg:p-10 shadow-2xl overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-5">
+                <div class="flex flex-wrap items-center gap-2.5">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-xs font-mono font-semibold text-blue-300">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    FEATURED PROJECT
+                  </span>
+                  <span class="text-xs font-mono text-slate-500">Capstone RPL Project</span>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-blue-300 transition-colors">
+                    Sistem Informasi Perpustakaan
+                  </h3>
+                  <p class="text-sm font-mono text-slate-400 mt-1">
+                    Full-Stack Web Management Application
+                  </p>
+                </div>
+
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  Aplikasi web manajemen perpustakaan sekolah dengan fitur lengkap: pencatatan inventaris buku, pendataan peminjam siswa, kalkulasi batas waktu pengembalian, dan riwayat sirkulasi berbasis database relasional.
+                </p>
+
+                <div class="space-y-2 pt-1">
+                  <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-400">
+                    <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Sistem CRUD terstruktur untuk data buku, anggota, dan transaksi</span>
+                  </div>
+                  <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-400">
+                    <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Validasi input form dan pencegahan duplikasi data</span>
+                  </div>
+                  <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-400">
+                    <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>Dashboard admin ringkas untuk memantau buku yang sedang dipinjam</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-medium">PHP</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-medium">MySQL</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-medium">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-mono text-blue-300 font-medium">JavaScript</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3.5 pt-3">
+                  <a href="https://demo-perpustakaan.example.com" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-md shadow-blue-600/20">
+                    <span>Live Demo</span>
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                  </a>
+                  <a href="https://github.com/nunn/sistem-perpustakaan-rpl" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-medium text-xs sm:text-sm transition-all">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Mockup App Preview -->
+              <div class="lg:col-span-5">
+                <div class="rounded-xl bg-[#090b12] border border-slate-800 shadow-xl overflow-hidden">
+                  <div class="flex items-center justify-between px-3.5 py-2.5 bg-[#06080e] border-b border-slate-800/80">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block"></span>
+                    </div>
+                    <div class="px-3 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-400 truncate max-w-[200px]">
+                      perpustakaan.local/dashboard
+                    </div>
+                    <div class="w-6"></div>
+                  </div>
+
+                  <div class="p-5 space-y-3 font-mono text-xs">
+                    <div class="grid grid-cols-2 gap-2.5">
+                      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <span class="text-[10px] text-slate-500 block">Total Buku</span>
+                        <span class="text-base font-bold text-white">1,240</span>
+                        <span class="text-[9px] text-emerald-400 block mt-0.5">✓ Terdata MySQL</span>
+                      </div>
+                      <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                        <span class="text-[10px] text-slate-500 block">Sirkulasi Pinjam</span>
+                        <span class="text-base font-bold text-blue-400">48</span>
+                        <span class="text-[9px] text-slate-400 block mt-0.5">Siswa Aktif</span>
+                      </div>
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-slate-950/90 border border-slate-800/80 space-y-2">
+                      <div class="flex justify-between text-[11px] text-slate-400 font-semibold border-b border-slate-800/60 pb-1">
+                        <span>Judul Buku</span>
+                        <span>Status</span>
+                      </div>
+                      <div class="flex justify-between text-[10px] text-slate-300">
+                        <span class="truncate pr-2">Pemrograman Web Modern</span>
+                        <span class="text-emerald-400">Tersedia</span>
+                      </div>
+                      <div class="flex justify-between text-[10px] text-slate-300">
+                        <span class="truncate pr-2">Basis Data Relasional SQL</span>
+                        <span class="text-amber-400">Dipinjam</span>
+                      </div>
+                      <div class="flex justify-between text-[10px] text-slate-300">
+                        <span class="truncate pr-2">Rekayasa Perangkat Lunak 1</span>
+                        <span class="text-emerald-400">Tersedia</span>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] text-slate-500 pt-1">
+                      <span>Database: MySQL Server</span>
+                      <span class="text-blue-400">PHP 8.x CRUD</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project 2 -->
+          <div class="group rounded-xl bg-[#0c0f18] border border-slate-800/90 hover:border-slate-700 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="p-5 bg-gradient-to-br from-[#0e121e] to-[#090b12] border-b border-slate-800/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">Point of Sale</span>
+                <div class="flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                  <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                </div>
+              </div>
+              <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Aplikasi Kasir Sederhana (POS)</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+                Sistem kasir ringan yang dirancang untuk kebutuhan koperasi siswa atau mini outlet. Menghitung total belanja, diskon, kembalian otomatis, serta mencetak struk ringkas.
+              </p>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-1.5">
+                <div class="flex items-start gap-2 text-xs text-slate-400"><span class="text-blue-500 font-bold">•</span><span>Kalkulasi total belanja dan kembalian secara real-time</span></div>
+                <div class="flex items-start gap-2 text-xs text-slate-400"><span class="text-blue-500 font-bold">•</span><span>Manajemen keranjang belanja interaktif</span></div>
+              </div>
+              <div class="space-y-4 pt-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">JavaScript</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">React</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">Tailwind CSS</span>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-800/80">
+                  <a href="https://demo-pos.example.com" target="_blank" rel="noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600/10 hover:bg-blue-600 border border-blue-500/20 text-blue-400 hover:text-white text-xs font-semibold transition-colors">
+                    <span>Demo</span>
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                  </a>
+                  <a href="https://github.com/nunn/kasir-sederhana-rpl" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white text-xs transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="group rounded-xl bg-[#0c0f18] border border-slate-800/90 hover:border-slate-700 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="p-5 bg-gradient-to-br from-[#0e121e] to-[#090b12] border-b border-slate-800/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">School Portal</span>
+                <div class="flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                  <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                </div>
+              </div>
+              <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Web Portal Organisasi / Ekskul</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+                Landing page responsif untuk kegiatan ekstrakurikuler IT di sekolah. Berisi agenda kegiatan, dokumentasi galeri, perkenalan pengurus, dan formulir pendaftaran anggota baru.
+              </p>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-1.5">
+                <div class="flex items-start gap-2 text-xs text-slate-400"><span class="text-blue-500 font-bold">•</span><span>Tampilan mobile-first yang responsif di berbagai layar</span></div>
+                <div class="flex items-start gap-2 text-xs text-slate-400"><span class="text-blue-500 font-bold">•</span><span>Navigasi bersih dengan filter kategori kegiatan</span></div>
+              </div>
+              <div class="space-y-4 pt-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">HTML</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">CSS</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">Bootstrap</span>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-800/80">
+                  <a href="https://demo-ekskul.example.com" target="_blank" rel="noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600/10 hover:bg-blue-600 border border-blue-500/20 text-blue-400 hover:text-white text-xs font-semibold transition-colors">
+                    <span>Demo</span>
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                  </a>
+                  <a href="https://github.com/nunn/web-ekskul-it" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white text-xs transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="group rounded-xl bg-[#0c0f18] border border-slate-800/90 hover:border-slate-700 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div class="p-5 bg-gradient-to-br from-[#0e121e] to-[#090b12] border-b border-slate-800/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">Personal Web</span>
+                <div class="flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                  <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                </div>
+              </div>
+              <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Personal Developer Portfolio v1</h4>
+              <p class="text-xs text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+                Versi awal portfolio berbasis HTML murni dan CSS modern untuk menampilkan tugas-tugas coding pertama dan latihan layout web responsif.
+              </p>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-1.5">
+                <div class="flex items-start gap-2 text-xs text-slate-400"><span class="text-blue-500 font-bold">•</span><span>Eksperimen pertama dengan semantic HTML5 dan CSS Grid</span></div>
+                <div class="flex items-start gap-2 text-xs text-slate-400"><span class="text-blue-500 font-bold">•</span><span>Dark theme minimalis dengan performa load instan</span></div>
+              </div>
+              <div class="space-y-4 pt-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">HTML5</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">CSS3</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300">JavaScript</span>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-800/80">
+                  <a href="https://portfolio-v1.example.com" target="_blank" rel="noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600/10 hover:bg-blue-600 border border-blue-500/20 text-blue-400 hover:text-white text-xs font-semibold transition-colors">
+                    <span>Demo</span>
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                  </a>
+                  <a href="https://github.com/nunn/personal-portfolio-v1" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white text-xs transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING JOURNEY TIMELINE -->
+    <section id="journey" class="py-20 md:py-28 bg-[#090b12]/60 relative">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="flex flex-col items-start mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-3">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <span>LEARNING TIMELINE</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Perjalanan Belajar &amp; Milestone
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400 mt-2 max-w-xl">
+            Proses langkah demi langkah dari mengenal sintaks pertama hingga membangun aplikasi mandiri.
+          </p>
+        </div>
+
+        <div class="relative border-l-2 border-slate-800 ml-4 md:ml-8 pl-6 md:pl-10 space-y-10">
+          <!-- Step 1 -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full border-2 bg-slate-950 border-emerald-500 flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <div class="p-5 sm:p-6 rounded-xl border bg-[#0c0e17] border-slate-800 hover:border-slate-700 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">2025</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Started Learning Programming</h3>
+                </div>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-slate-400">Langkah Awal</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2">
+                Memasuki jurusan RPL, belajar logika pemrograman, algoritma dasar, dasar-dasar komputasi, serta fondasi web pertama dengan HTML &amp; CSS.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full border-2 bg-slate-950 border-emerald-500 flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            </div>
+            <div class="p-5 sm:p-6 rounded-xl border bg-[#0c0e17] border-slate-800 hover:border-slate-700 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">2026</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Web Development &amp; Database</h3>
+                </div>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-slate-400">Fondasi Utama</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2">
+                Mendalami bahasa JavaScript &amp; PHP, perancangan basis data relasional menggunakan MySQL, query SQL, serta pembuatan aplikasi web CRUD pertama.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full border-2 bg-blue-600 border-blue-400 shadow-[0_0_12px_#3b82f6] flex items-center justify-center">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+            </div>
+            <div class="p-5 sm:p-6 rounded-xl border bg-[#0e121e] border-blue-500/30 shadow-lg shadow-blue-500/5 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">2026</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Building Personal Projects</h3>
+                </div>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-slate-400">Fase Aktif</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2">
+                Mengembangkan project nyata seperti Sistem Perpustakaan dan Aplikasi Kasir, serta mulai mengeksplorasi ekosistem modern seperti React, Next.js, dan Tailwind CSS.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-5 h-5 rounded-full border-2 bg-slate-900 border-slate-700 flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+            </div>
+            <div class="p-5 sm:p-6 rounded-xl border bg-[#0c0e17] border-slate-800 hover:border-slate-700 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20">NEXT</span>
+                  <h3 class="text-base sm:text-lg font-bold text-white">Become a Better Software Developer</h3>
+                </div>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-slate-400">Masa Depan</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2">
+                Fokus memperdalam clean architecture, penguasaan TypeScript, integrasi backend API yang solid, dan siap berkontribusi pada project tim maupun industri.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENTLY BUILDING -->
+    <section class="py-16 md:py-20 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-5 sm:px-6">
+        <div class="rounded-2xl bg-[#0b0e17] border border-slate-800/90 shadow-2xl p-6 sm:p-8 relative">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-800/80">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+              </div>
+              <div>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-blue-400 block">Status Aktif</span>
+                <h3 class="text-lg font-bold text-white">Currently Building</h3>
+              </div>
+            </div>
+
+            <button id="rebuild-btn" class="self-start sm:self-auto px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-mono text-slate-300 hover:text-white transition-all flex items-center gap-2" title="Simulasikan proses build">
+              <span id="rebuild-indicator" class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span id="rebuild-text">Run Re-build</span>
+            </button>
+          </div>
+
+          <p class="text-sm text-slate-300 mt-5 leading-relaxed">
+            Improving my web development skills and experimenting with new ideas.
+          </p>
+
+          <div class="mt-5 rounded-xl bg-[#06080d] border border-slate-800 p-4 font-mono text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto shadow-inner">
+            <div class="flex items-center gap-2 text-slate-400 pb-2 border-b border-slate-900">
+              <span class="text-blue-400 font-semibold">nunn@portfolio:~$</span>
+              <span class="text-slate-100">npm run build</span>
+            </div>
+
+            <div id="terminal-output" class="pt-3 space-y-1.5 text-slate-400">
+              <div class="text-slate-500">&gt; portfolio@0.1.0 build</div>
+              <div class="text-slate-500">&gt; next build</div>
+              <div class="text-emerald-400">✓ Linting and type checking...</div>
+              <div class="text-emerald-400">✓ Generating static pages (SSG)...</div>
+              <div class="text-emerald-400">✓ Optimizing production bundles...</div>
+              <div class="text-slate-300">Status: Building something new and sharpening software skills daily.</div>
+              <div class="text-emerald-400">[READY] Waiting for the next problem to solve.</div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-[11px] text-slate-500">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                Build target: Next.js Production
+              </span>
+              <span>Node v22.x</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 md:py-32 relative overflow-hidden">
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[150px] pointer-events-none rounded-full"></div>
+
+      <div class="max-w-4xl mx-auto px-5 sm:px-6 relative z-10 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-4">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <span>LET'S CONNECT</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase">
+          LET'S BUILD SOMETHING.
+        </h2>
+
+        <p class="text-base sm:text-lg text-slate-400 mt-4 max-w-xl mx-auto leading-relaxed">
+          Have an idea, project, or just want to say hi? Saya selalu terbuka untuk berdiskusi seputar software development, berbagi ide project, atau belajar bersama.
+        </p>
+
+        <div class="mt-8 flex justify-center">
+          <a href="mailto:nunn.dev@example.com" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold text-base transition-all shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50">
+            <span>Get In Touch</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Channels Grid -->
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+          <!-- Email -->
+          <div class="p-5 rounded-xl bg-[#0c0e17] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800/80">
+                <svg class="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 font-mono block">Email</span>
+                <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">nunn.dev@example.com</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="copy-email-btn" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition-colors" title="Salin alamat email">
+                <svg id="copy-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <svg id="copied-icon" class="w-4 h-4 text-emerald-400 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </button>
+              <a href="mailto:nunn.dev@example.com" class="p-2 rounded-lg bg-slate-900 hover:bg-blue-600 border border-slate-800 hover:border-blue-500 text-slate-400 hover:text-white transition-all" title="Send Email">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="p-5 rounded-xl bg-[#0c0e17] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800/80">
+                <svg class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 font-mono block">WhatsApp</span>
+                <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">+62 812-3456-7890</span>
+              </div>
+            </div>
+            <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-emerald-600 border border-slate-800 hover:border-emerald-500 text-slate-400 hover:text-white transition-all" title="Chat WhatsApp">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+
+          <!-- GitHub -->
+          <div class="p-5 rounded-xl bg-[#0c0e17] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800/80">
+                <svg class="w-5 h-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 font-mono block">GitHub</span>
+                <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">github.com/nunn</span>
+              </div>
+            </div>
+            <a href="https://github.com/nunn" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-700 border border-slate-800 hover:border-slate-600 text-slate-400 hover:text-white transition-all" title="View GitHub">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Instagram -->
+          <div class="p-5 rounded-xl bg-[#0c0e17] border border-slate-800 hover:border-slate-700 transition-all duration-300 flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800/80">
+                <svg class="w-5 h-5 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-500 font-mono block">Instagram</span>
+                <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-300 transition-colors">@nunn.dev</span>
+              </div>
+            </div>
+            <a href="https://instagram.com/nunn.dev" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-pink-600 border border-slate-800 hover:border-pink-500 text-slate-400 hover:text-white transition-all" title="Follow Instagram">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <p id="copy-status" class="mt-4 text-xs font-mono text-emerald-400 hidden">
+          ✓ Alamat email berhasil disalin ke clipboard!
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-900 bg-[#06080d] py-12 text-slate-400">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex flex-col items-center md:items-start space-y-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span class="text-white font-mono font-bold text-sm tracking-tight">nunn.dev</span>
+          <span class="text-xs font-mono text-slate-500">— nothing is impossible</span>
+        </div>
+        <p class="text-xs text-slate-400">
+          © 2026 Powered by Nunn • Built with Next.js &amp; Tailwind CSS.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-400">
+        <a href="#home" class="hover:text-white transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#journey" class="hover:text-white transition-colors">Journey</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/nunn" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-emerald-400 transition-colors" aria-label="WhatsApp">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+        </a>
+        <a href="mailto:nunn.dev@example.com" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-blue-400 transition-colors" aria-label="Email">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="https://instagram.com/nunn.dev" target="_blank" rel="noreferrer" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-pink-400 transition-colors" aria-label="Instagram">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // Copy Email Action
+    const copyBtn = document.getElementById('copy-email-btn');
+    const copyIcon = document.getElementById('copy-icon');
+    const copiedIcon = document.getElementById('copied-icon');
+    const copyStatus = document.getElementById('copy-status');
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('nunn.dev@example.com').then(() => {
+        copyIcon.classList.add('hidden');
+        copiedIcon.classList.remove('hidden');
+        copyStatus.classList.remove('hidden');
+        setTimeout(() => {
+          copyIcon.classList.remove('hidden');
+          copiedIcon.classList.add('hidden');
+          copyStatus.classList.add('hidden');
+        }, 2500);
+      });
+    });
+
+    // Terminal Rebuild Simulation
+    const rebuildBtn = document.getElementById('rebuild-btn');
+    const rebuildText = document.getElementById('rebuild-text');
+    const rebuildIndicator = document.getElementById('rebuild-indicator');
+    const terminalOutput = document.getElementById('terminal-output');
+
+    rebuildBtn.addEventListener('click', () => {
+      rebuildText.textContent = 'Compiling...';
+      rebuildIndicator.className = 'w-2 h-2 rounded-full bg-amber-400 animate-spin';
+      terminalOutput.innerHTML = '<div class="text-amber-400 animate-pulse">&gt; Compiling packages and checking TypeScript types...</div>';
+      
+      setTimeout(() => {
+        terminalOutput.innerHTML = `
+          <div class="text-slate-500">&gt; portfolio@0.1.0 build</div>
+          <div class="text-slate-500">&gt; next build</div>
+          <div class="text-emerald-400">✓ Linting and type checking...</div>
+          <div class="text-emerald-400">✓ Generating static pages (SSG)...</div>
+          <div class="text-emerald-400">✓ Optimizing production bundles...</div>
+          <div class="text-slate-300">Status: Building something new and sharpening software skills daily.</div>
+          <div class="text-emerald-400">[READY] Compiled successfully in 680ms.</div>
+        `;
+        rebuildText.textContent = 'Run Re-build';
+        rebuildIndicator.className = 'w-2 h-2 rounded-full bg-emerald-400';
+      }, 900);
+    });
+  </script>
+</body>
+</html>
