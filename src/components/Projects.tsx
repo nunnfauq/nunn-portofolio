@@ -21,13 +21,13 @@ export default function Projects() {
         <div className="flex flex-col items-start mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-3">
             <Code2Icon className="w-3.5 h-3.5" />
-            <span>FEATURED PROJECTS</span>
+            <span>PROJECTS &amp; EXPERIMENTS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Project Unggulan &amp; Eksperimen
+            Project dan Eksperimen
           </h2>
           <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-xl">
-            Aplikasi nyata yang dibangun dari materi RPL di sekolah serta eksplorasi pemrograman mandiri.
+            Karya dan eksplorasi web yang dikerjakan secara langsung, mulai dari latihan dasar hingga deployment nyata.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function Projects() {
                       FEATURED PROJECT
                     </span>
                     <span className="text-xs font-mono text-slate-500">
-                      Capstone RPL Project
+                      First Deployment Experiment
                     </span>
                   </div>
 
@@ -119,8 +119,8 @@ export default function Projects() {
                         <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80 inline-block"></span>
                         <span className="w-2.5 h-2.5 rounded-full bg-green-500/80 inline-block"></span>
                       </div>
-                      <div className="px-3 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-400 truncate max-w-[200px]">
-                        perpustakaan.local/dashboard
+                      <div className="px-3 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-400 truncate max-w-[240px]">
+                        nunnfauq.github.io/starp.github.io
                       </div>
                       <div className="w-6"></div>
                     </div>
@@ -130,40 +130,36 @@ export default function Projects() {
                       {/* Metric cards inside mock app */}
                       <div className="grid grid-cols-2 gap-2.5">
                         <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-                          <span className="text-[10px] text-slate-500 block">Total Buku</span>
-                          <span className="text-base font-bold text-white">1,240</span>
-                          <span className="text-[9px] text-emerald-400 block mt-0.5">✓ Terdata MySQL</span>
+                          <span className="text-[10px] text-slate-500 block">Deploy Status</span>
+                          <span className="text-base font-bold text-white">Live</span>
+                          <span className="text-[9px] text-emerald-400 block mt-0.5">✓ GitHub Pages</span>
                         </div>
                         <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
-                          <span className="text-[10px] text-slate-500 block">Sirkulasi Pinjam</span>
-                          <span className="text-base font-bold text-blue-400">48</span>
-                          <span className="text-[9px] text-slate-400 block mt-0.5">Siswa Aktif</span>
+                          <span className="text-[10px] text-slate-500 block">Metode</span>
+                          <span className="text-base font-bold text-blue-400">Manual</span>
+                          <span className="text-[9px] text-slate-400 block mt-0.5">Static HTML &amp; CSS</span>
                         </div>
                       </div>
 
-                      {/* Mock Table / Data Rows */}
-                      <div className="p-3 rounded-lg bg-slate-950/90 border border-slate-800/80 space-y-2">
-                        <div className="flex justify-between text-[11px] text-slate-400 font-semibold border-b border-slate-800/60 pb-1">
-                          <span>Judul Buku</span>
-                          <span>Status</span>
+                      {/* Mock Table / Site Preview */}
+                      <div className="p-3.5 rounded-lg bg-slate-950/90 border border-slate-800/80 space-y-2">
+                        <div className="flex justify-between text-[11px] text-slate-400 font-semibold border-b border-slate-800/60 pb-1.5">
+                          <span className="text-blue-300">MiawpCode / Web Star</span>
+                          <span className="text-emerald-400 text-[10px]">Active Hosting</span>
                         </div>
-                        <div className="flex justify-between text-[10px] text-slate-300">
-                          <span className="truncate pr-2">Pemrograman Web Modern</span>
-                          <span className="text-emerald-400">Tersedia</span>
-                        </div>
-                        <div className="flex justify-between text-[10px] text-slate-300">
-                          <span className="truncate pr-2">Basis Data Relasional SQL</span>
-                          <span className="text-amber-400">Dipinjam</span>
-                        </div>
-                        <div className="flex justify-between text-[10px] text-slate-300">
-                          <span className="truncate pr-2">Rekayasa Perangkat Lunak 1</span>
-                          <span className="text-emerald-400">Tersedia</span>
+                        <p className="text-[11px] text-slate-200 font-sans italic">
+                          &ldquo;Hello, miawp34 in here! Technology for future.&rdquo;
+                        </p>
+                        <div className="flex flex-wrap gap-1.5 pt-1 text-[9px] text-slate-400">
+                          <span className="px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800">Pelayanan Nonstop</span>
+                          <span className="px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800">1.412+ Review</span>
+                          <span className="px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800">© Nunn X 2026</span>
                         </div>
                       </div>
 
                       <div className="flex items-center justify-between text-[10px] text-slate-500 pt-1">
-                        <span>Database: MySQL Server</span>
-                        <span className="text-blue-400">PHP 8.x CRUD</span>
+                        <span>Repo: nunnfauq/starp.github.io</span>
+                        <span className="text-blue-400">First Deploy ✓</span>
                       </div>
                     </div>
                   </div>
@@ -173,83 +169,85 @@ export default function Projects() {
           </div>
         )}
 
-        {/* 2. Standard Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {standardProjects.map((proj) => (
-            <div
-              key={proj.id}
-              className="group rounded-xl bg-[#0c0f18] border border-slate-800/90 hover:border-slate-700 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
-            >
-              {/* Card Header / Mock Preview */}
-              <div className="p-5 bg-gradient-to-br from-[#0e121e] to-[#090b12] border-b border-slate-800/80 relative">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">
-                    {proj.subtitle}
-                  </span>
-                  <div className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-slate-700"></span>
-                    <span className="w-2 h-2 rounded-full bg-slate-700"></span>
-                  </div>
-                </div>
-
-                <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
-                  {proj.title}
-                </h4>
-
-                <p className="text-xs text-slate-400 mt-2 line-clamp-3 leading-relaxed">
-                  {proj.description}
-                </p>
-              </div>
-
-              {/* Highlights & Tags */}
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                <div className="space-y-1.5">
-                  {proj.highlights.slice(0, 2).map((hl, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-400">
-                      <span className="text-blue-500 font-bold">•</span>
-                      <span>{hl}</span>
+        {/* 2. Standard Projects Grid (conditionally rendered if available) */}
+        {standardProjects.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {standardProjects.map((proj) => (
+              <div
+                key={proj.id}
+                className="group rounded-xl bg-[#0c0f18] border border-slate-800/90 hover:border-slate-700 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              >
+                {/* Card Header / Mock Preview */}
+                <div className="p-5 bg-gradient-to-br from-[#0e121e] to-[#090b12] border-b border-slate-800/80 relative">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-400">
+                      {proj.subtitle}
+                    </span>
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-slate-700"></span>
+                      <span className="w-2 h-2 rounded-full bg-slate-700"></span>
                     </div>
-                  ))}
+                  </div>
+
+                  <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                    {proj.title}
+                  </h4>
+
+                  <p className="text-xs text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+                    {proj.description}
+                  </p>
                 </div>
 
-                <div className="space-y-4 pt-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {proj.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300"
-                      >
-                        {tag}
-                      </span>
+                {/* Highlights & Tags */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-1.5">
+                    {proj.highlights.slice(0, 2).map((hl, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-xs text-slate-400">
+                        <span className="text-blue-500 font-bold">•</span>
+                        <span>{hl}</span>
+                      </div>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2 pt-2 border-t border-slate-800/80">
-                    <a
-                      href={proj.demoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600/10 hover:bg-blue-600 border border-blue-500/20 text-blue-400 hover:text-white text-xs font-semibold transition-colors"
-                    >
-                      <span>Demo</span>
-                      <ExternalLinkIcon className="w-3 h-3" />
-                    </a>
-                    <a
-                      href={proj.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white text-xs transition-colors"
-                      title="GitHub Repository"
-                      aria-label="GitHub Repository"
-                    >
-                      <GithubIcon className="w-4 h-4" />
-                    </a>
+                  <div className="space-y-4 pt-2">
+                    <div className="flex flex-wrap gap-1.5">
+                      {proj.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 rounded bg-slate-900/80 border border-slate-800 text-[11px] font-mono text-slate-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center gap-2 pt-2 border-t border-slate-800/80">
+                      <a
+                        href={proj.demoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600/10 hover:bg-blue-600 border border-blue-500/20 text-blue-400 hover:text-white text-xs font-semibold transition-colors"
+                      >
+                        <span>Demo</span>
+                        <ExternalLinkIcon className="w-3 h-3" />
+                      </a>
+                      <a
+                        href={proj.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center p-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white text-xs transition-colors"
+                        title="GitHub Repository"
+                        aria-label="GitHub Repository"
+                      >
+                        <GithubIcon className="w-4 h-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

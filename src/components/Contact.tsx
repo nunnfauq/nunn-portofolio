@@ -44,7 +44,7 @@ export default function Contact() {
     },
     {
       name: "GitHub",
-      label: "github.com/nunn",
+      label: "github.com/nunnfauq",
       href: contact.github,
       icon: <GithubIcon className="w-5 h-5 text-slate-300" />,
       actionText: "View Profile",
@@ -52,7 +52,7 @@ export default function Contact() {
     },
     {
       name: "Instagram",
-      label: "@nunn.dev",
+      label: "@nunnwasd",
       href: contact.instagram,
       icon: <InstagramIcon className="w-5 h-5 text-pink-400" />,
       actionText: "Follow",

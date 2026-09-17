@@ -41,7 +41,7 @@ export interface SocialLink {
 
 export const portfolioData = {
   profile: {
-    name: "Nunn",
+    name: "Addis Fauqei Nunno",
     role: "RPL Student & Aspiring Software Developer",
     schoolMajor: "Rekayasa Perangkat Lunak (RPL)",
     tagline: "nothing is impossible",
@@ -129,70 +129,20 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "perpustakaan-rpl",
-      title: "Sistem Informasi Perpustakaan",
-      subtitle: "Full-Stack Web Management Application",
+      id: "starp-web",
+      title: "Web Star (MiawpCode)",
+      subtitle: "Manual Static Web & First GitHub Pages Deployment",
       description:
-        "Aplikasi web manajemen perpustakaan sekolah dengan fitur lengkap: pencatatan inventaris buku, pendataan peminjam siswa, kalkulasi batas waktu pengembalian, dan riwayat sirkulasi berbasis database relasional.",
-      tags: ["PHP", "MySQL", "Tailwind CSS", "JavaScript"],
+        "Sebuah web simpel mencoba deploy pertama dan mengerjakan manual.",
+      tags: ["HTML", "CSS", "GitHub Pages", "Manual Deployment"],
       featured: true,
-      demoUrl: "https://demo-perpustakaan.example.com",
-      githubUrl: "https://github.com/nunn/sistem-perpustakaan-rpl",
-      imageAlt: "Preview Sistem Informasi Perpustakaan Sekolah",
+      demoUrl: "https://nunnfauq.github.io/starp.github.io/",
+      githubUrl: "https://github.com/nunnfauq/starp.github.io",
+      imageAlt: "Preview Web Star MiawpCode - My First Hosting",
       highlights: [
-        "Sistem CRUD terstruktur untuk data buku, anggota, dan transaksi",
-        "Validasi input form dan pencegahan duplikasi data",
-        "Dashboard admin ringkas untuk memantau buku yang sedang dipinjam"
-      ]
-    },
-    {
-      id: "kasir-sederhana",
-      title: "Aplikasi Kasir Sederhana (POS)",
-      subtitle: "Point of Sale & Inventory Tracking",
-      description:
-        "Sistem kasir ringan yang dirancang untuk kebutuhan koperasi siswa atau mini outlet. Menghitung total belanja, diskon, kembalian otomatis, serta mencetak struk ringkas.",
-      tags: ["JavaScript", "React", "Tailwind CSS", "MySQL"],
-      featured: false,
-      demoUrl: "https://demo-pos.example.com",
-      githubUrl: "https://github.com/nunn/kasir-sederhana-rpl",
-      imageAlt: "Preview Aplikasi Kasir Sederhana",
-      highlights: [
-        "Kalkulasi total belanja dan kembalian secara real-time",
-        "Manajemen keranjang belanja interaktif",
-        "Pencatatan riwayat transaksi harian"
-      ]
-    },
-    {
-      id: "portal-ekskul-sekolah",
-      title: "Web Portal Organisasi / Ekskul",
-      subtitle: "School Community Landing Page",
-      description:
-        "Landing page responsif untuk kegiatan ekstrakurikuler IT di sekolah. Berisi agenda kegiatan, dokumentasi galeri, perkenalan pengurus, dan formulir pendaftaran anggota baru.",
-      tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      featured: false,
-      demoUrl: "https://demo-ekskul.example.com",
-      githubUrl: "https://github.com/nunn/web-ekskul-it",
-      imageAlt: "Preview Web Portal Organisasi Sekolah",
-      highlights: [
-        "Tampilan mobile-first yang responsif di berbagai ukuran layar",
-        "Navigasi bersih dengan filter kategori kegiatan",
-        "Formulir registrasi dengan validasi sisi klien"
-      ]
-    },
-    {
-      id: "portfolio-v1",
-      title: "Personal Developer Portfolio v1",
-      subtitle: "Personal Web Portfolio",
-      description:
-        "Versi awal portfolio berbasis HTML murni dan CSS modern untuk menampilkan tugas-tugas coding pertama dan latihan layout web responsif.",
-      tags: ["HTML5", "CSS3", "JavaScript"],
-      featured: false,
-      demoUrl: "https://portfolio-v1.example.com",
-      githubUrl: "https://github.com/nunn/personal-portfolio-v1",
-      imageAlt: "Preview Developer Portfolio v1",
-      highlights: [
-        "Eksperimen pertama dengan semantic HTML5 dan CSS Grid",
-        "Dark theme minimalis dengan performa load yang instan"
+        "Percobaan pertama deploy manual menggunakan GitHub Pages",
+        "Pengerjaan dan penataan struktur kode manual tanpa template berlebih",
+        "Eksperimen langsung dengan hosting web statis dan domain GitHub Pages"
       ]
     }
   ] as ProjectItem[],
@@ -251,11 +201,11 @@ export const portfolioData = {
     heading: "LET'S BUILD SOMETHING.",
     subtext:
       "Have an idea, project, or just want to say hi? Saya selalu terbuka untuk berdiskusi seputar software development, berbagi ide project, atau belajar bersama.",
-    email: "nunn.dev@example.com",
-    whatsapp: "https://wa.me/6281234567890",
-    whatsappNumber: "+62 812-3456-7890",
-    github: "https://github.com/nunn",
-    instagram: "https://instagram.com/nunn.dev",
+    email: "nunnofauq@gmail.com",
+    whatsapp: "https://wa.me/6283163212599",
+    whatsappNumber: "083163212599",
+    github: "https://github.com/nunnfauq",
+    instagram: "https://instagram.com/nunnwasd",
     ctaText: "Get In Touch"
   },
 

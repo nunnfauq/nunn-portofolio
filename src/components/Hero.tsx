@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { portfolioData } from "../data/portfolioData";
 import {
   GithubIcon,
@@ -11,6 +13,31 @@ import {
 
 export default function Hero() {
   const { profile } = portfolioData;
+  const fullText = "Hai Saya Addis Fauqei Nunno";
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    const typingSpeed = isDeleting ? 35 : 85;
+
+    if (!isDeleting && displayText === fullText) {
+      timer = setTimeout(() => setIsDeleting(true), 3500);
+    } else if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      timer = setTimeout(() => {}, 500);
+    } else {
+      timer = setTimeout(() => {
+        setDisplayText((prev) =>
+          isDeleting
+            ? fullText.substring(0, prev.length - 1)
+            : fullText.substring(0, prev.length + 1)
+        );
+      }, typingSpeed);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting]);
 
   return (
     <section
@@ -34,13 +61,16 @@ export default function Hero() {
               <span className="font-mono text-slate-300">{profile.availability}</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline with Typewriter Animation */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08]">
-                BUILDING IDEAS. <br />
-                <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
-                  LEARNING EVERY DAY.
-                </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12] min-h-[1.25em]">
+                <span>{displayText.length <= 9 ? displayText : "Hai Saya "}</span>
+                {displayText.length > 9 && (
+                  <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
+                    {displayText.substring(9)}
+                  </span>
+                )}
+                <span className="inline-block w-1.5 h-[0.85em] bg-blue-400 animate-pulse ml-1.5 align-middle rounded-sm" />
               </h1>
               <p className="text-sm sm:text-base font-mono text-blue-400/90 tracking-wide pt-1 flex items-center gap-2">
                 <span className="text-slate-600">—</span>
@@ -132,7 +162,7 @@ export default function Hero() {
                   <div className="pl-4 space-y-1">
                     <p>
                       <span className="text-slate-400">name:</span>{" "}
-                      <span className="text-amber-300">&quot;Nunn&quot;</span>,
+                      <span className="text-amber-300">&quot;Addis Fauqei Nunno&quot;</span>,
                     </p>
                     <p>
                       <span className="text-slate-400">role:</span>{" "}
